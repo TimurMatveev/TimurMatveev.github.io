@@ -40,3 +40,14 @@ document.body.insertBefore(layer1, document.body.firstChild);
 document.body.insertBefore(layer2, document.body.firstChild);
 document.body.insertBefore(layer3, document.body.firstChild);
 document.body.insertBefore(layer4, document.body.firstChild);
+
+
+var tl = document.createElement('canvas');
+tl.setAttribute('width', w);
+tl.setAttribute('height', h);
+tl.style.position = 'absolute';
+tl.style.top = '0';
+tl.style.left = '0';
+tl.style.zIndex = '101';
+document.body.insertBefore(tl, document.body.firstChild);
+tmp1 = tl.getContext('2d');

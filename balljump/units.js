@@ -5,3 +5,4 @@ while (w > h) {
 }
 
 var UNIT = w / 60;
+var gravity = 0.5;

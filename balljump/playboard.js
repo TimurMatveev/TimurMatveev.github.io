@@ -1,20 +1,30 @@
 var ball = {
-  x: w / 2,
-  y: UNIT,
-  vx: 0,
-  vy: -1,
-  r: UNIT
+  cur: {
+    x: w / 2,
+    y: 20*UNIT
+  },
+  next: {
+    x: w / 2,
+    y: 20*UNIT - 1
+  },
+  v: {
+    x: -2,
+    y: 1
+  },
+  vNorm: 1,
+  r: 2 * UNIT,
+  down: gravity
 }
 
 
 
 document.body.addEventListener('click', function(e) {
-  var d = distance(ball.x, ball.y, e.clientX, e.clientY);
-  if (ball.x !== e.clientX) {
-    ball.vx += (ball.x - e.clientX) / d * 2;
+  var d = distance(ball.cur, {x: e.clientX, y: e.clientY});
+  if (ball.cur.x !== e.clientX) {
+    ball.v.x += (ball.cur.x - e.clientX) / d * 2 * UNIT;
   }
   if (ball.y !== e.clientY) {
-    ball.vy += (ball.y - e.clientY) / d * 2;
+    ball.v.y += (ball.cur.y - e.clientY) / d * 2 * UNIT;
   }
 });
 

@@ -85,49 +85,6 @@
   position: relative;
 }
 
-@media screen and (min-width: 2100px) {
-  .youtube-slider-item {
-    min-width: 300px;
-  }
-}
-@media screen and (min-width: 1750px) and (max-width: 2099px) {
-  .youtube-slider-item {
-    min-width: 20%;
-  }
-}
-@media screen and (min-width: 1400px) and (max-width: 1749px) {
-  .youtube-slider-item {
-    min-width: 25%;
-  }
-}
-@media screen and (min-width: 1050px) and (max-width: 1399px) {
-  .youtube-slider-item {
-    min-width: 33.333%;
-  }
-}
-@media screen and (min-width: 700px) and (max-width: 1049px) {
-  .youtube-slider-item {
-    min-width: 50%;
-  }
-}
-@media screen and (max-width: 699px) {
-  .youtube-slider-item {
-    min-width: 100%;
-  }
-}
-@media screen and (orientation: portrait) {
-  .youtube-slider-item {
-    min-width: 100%;
-  }
-  .youtube-slider-header {
-    height: 120px;
-  }
-  .youtube-slider-search, .youtube-slider-submit {
-    font-size: 64px;
-  }
-}
-
-
 .video-reference {
   display: flex;
   flex-direction: column;
@@ -267,5 +224,97 @@
   100% {
     transform: translate(0, 0) scale(1, 1);
     opacity: 1;
+  }
+}
+
+@media screen and (min-width: 2100px) {
+  .youtube-slider-item {
+    min-width: 300px;
+  }
+}
+@media screen and (min-width: 1750px) and (max-width: 2099px) {
+  .youtube-slider-item {
+    min-width: 20%;
+  }
+}
+@media screen and (min-width: 1400px) and (max-width: 1749px) {
+  .youtube-slider-item {
+    min-width: 25%;
+  }
+}
+@media screen and (min-width: 1050px) and (max-width: 1399px) {
+  .youtube-slider-item {
+    min-width: 33.333%;
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 1049px) {
+  .youtube-slider-item {
+    min-width: 50%;
+  }
+}
+@media screen and (max-width: 699px) {
+  .youtube-slider-item {
+    min-width: 100%;
+  }
+}
+@media screen and (orientation: portrait) {
+  .youtube-slider-item {
+    min-width: 100%;
+  }
+  .youtube-slider-header {
+    height: 8vh;
+    padding: 0 1vh;
+  }
+
+  .youtube-slider-search {
+    width: 68vw;
+    font-size: 3.6em;
+    border-radius: 46px;
+  }
+
+  .youtube-slider-submit {
+    font-size: 3.6em;
+    margin-left: 2vw;
+    border: solid 2px #fff;
+    border-radius: 46px;
+  }
+
+  .video-slide-preview {
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+    min-width: 100%;
+  }
+
+  .video-slide-title {
+    font-size: 3em;
+    line-height: 1.6em;
+    text-align: center;
+  }
+
+  .video-slide-description {
+    color: #666;
+    font-size: 2.4em;
+    padding: 25px 48px;
+    line-height: 1.6em;
+  }
+
+  .video-slide-date {
+    font-size: 1.8em;
+    padding: 0 40px 40px 0;
+  }
+
+  .video-slide-views {
+    font-size: 1.8em;
+    padding: 0 0 40px 40px;
+  }
+
+  .youtube-slider-nav {
+    height: 1vh;
+    padding: 1vh;
+  }
+  .slider-link {
+    width: 1vh;
+    height: 1vh;
+    margin: 0 6px;
   }
 }

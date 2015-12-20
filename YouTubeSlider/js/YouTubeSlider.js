@@ -59,7 +59,6 @@ var YouTubeSlider = function() {
     this.input.classList.add('youtube-slider-search');
     this.input.setAttribute('type', 'text');
     this.input.setAttribute('placeholder', 'Search videos...');
-/*REMOVE*/this.input.setAttribute('value', 'JavaScript');
 
     this.submit = document.createElement('button');
     this.submit.innerText = 'Search';
@@ -164,7 +163,7 @@ var YouTubeSlider = function() {
     window.addEventListener('resize', function() {
       if (this.items.length > 0) {
         var n = this.currentPage * this.itemsOnPage,
-            h = document.getElementsByTagName('html')[0].clientHeight - 170 + 'px';
+            h = document.getElementsByTagName('html')[0].clientHeight - document.querySelector('.youtube-slider-header').clientHeight - document.querySelector('.youtube-slider-nav').clientHeight + 'px';
 
         this.items.forEach(function(item) {
           item.style.height = h;

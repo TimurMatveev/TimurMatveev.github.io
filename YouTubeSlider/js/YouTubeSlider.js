@@ -97,14 +97,24 @@ var YouTubeSlider = function() {
     var swipeSpeed;
     
     var pressed = false;
-    that.slider.addEventListener('mousedown', function(downEvent) {
+
+    function beginSwipe(downEvent) {
       swipeDistance = 0;
       swipeStartTime = new Date();
-      swipeStartX = downEvent.clientX;
+      swipeStartX = downEvent.pageX;
       pressed = true;
-    });
+    }
 
-    window.addEventListener('mouseup', function(upEvent) {
+    function swipeMove(moveEvent) {
+      if (pressed) {
+        swipeDistance = moveEvent.pageX - swipeStartX;
+        that.items.forEach(function(item) {
+          item.style.transform = 'translate3d(' + (that.sliderPosition + swipeDistance) + 'px, 0px, 0px)';
+        });
+      }
+    }
+
+    function finishSwipe(upEvent) {
       swipeFinishTime = new Date();
       swipeDuration = swipeFinishTime - swipeStartTime;
       swipeSpeed = swipeDistance / swipeDuration;
@@ -113,23 +123,39 @@ var YouTubeSlider = function() {
       }
       pressed = false;
       if (swipeDistance > 0) {
-        this.swipeToPage(this.currentPage - 1, swipeSpeed)
+        that.swipeToPage(that.currentPage - 1, swipeSpeed)
       } else if (swipeDistance < 0) {
-        this.swipeToPage(this.currentPage + 1, swipeSpeed)
+        that.swipeToPage(that.currentPage + 1, swipeSpeed)
       }
+    }
+
+    this.slider.addEventListener('mousedown', function(downEvent) {
+      beginSwipe(downEvent);
+    }.bind(this));
+
+    window.addEventListener('mouseup', function(upEvent) {
+      finishSwipe(upEvent)
     }.bind(this));
 
     window.addEventListener('mousemove', function(moveEvent) {
-      if (pressed) {
-        swipeDistance = moveEvent.clientX - swipeStartX;
-        that.items.forEach(function(item) {
-          item.style.transform = 'translate3d(' + (that.sliderPosition + swipeDistance) + 'px, 0px, 0px)';
-        });
-      }
-    });
+      swipeMove(moveEvent)
+    }.bind(this));
 
-    var prevChange = 0,
-        currentChange = 0;
+    this.slider.addEventListener("touchstart", function(e) {
+      e.preventDefault();
+      beginSwipe(e.changedTouches[0]);
+    }, false);
+
+    window..addEventListener("touchmove", function(e) {
+      e.preventDefault();
+      swipeMove(e.changedTouches[0]);
+    }, false);
+
+    window.addEventListener("touchend", function(e) {
+      e.preventDefault();
+      finishSwipe(e.changedTouches[0]);
+    }, false);
+
     window.addEventListener('resize', function() {
       if (this.items.length > 0) {
         var n = this.currentPage * this.itemsOnPage,
@@ -138,7 +164,7 @@ var YouTubeSlider = function() {
         this.items.forEach(function(item) {
           item.style.height = h;
         })
-        
+
         function resize(context) {
           context.currentPage = Math.floor(n / context.itemsOnPage);
           context.resetNavigation()
@@ -219,6 +245,10 @@ var YouTubeSlider = function() {
         this.swipeToPage(this.currentPage, Infinity);
       }
     }.bind(this));
+
+
+
+    
 
     return this;
   }

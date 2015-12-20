@@ -105,18 +105,22 @@
     min-width: 33.333%;
   }
 }
-
 @media screen and (min-width: 700px) and (max-width: 1049px) {
   .youtube-slider-item {
     min-width: 50%;
   }
 }
-
 @media screen and (max-width: 699px) {
   .youtube-slider-item {
     min-width: 100%;
   }
 }
+@media screen and (orientation: portrait) {
+  .youtube-slider-item {
+    min-width: 100%;
+  }
+}
+
 
 .video-reference {
   display: flex;

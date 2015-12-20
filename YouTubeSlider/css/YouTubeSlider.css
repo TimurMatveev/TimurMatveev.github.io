@@ -119,6 +119,12 @@
   .youtube-slider-item {
     min-width: 100%;
   }
+  .youtube-slider-header {
+    height: 120px;
+  }
+  .youtube-slider-search, .youtube-slider-submit {
+    font-size: 64px;
+  }
 }
 
 

@@ -88,6 +88,11 @@ var YouTubeSlider = function() {
       this.reload(15);
     }.bind(this));
 
+    this.submit.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      this.reload(15);
+    }.bind(this));
+
     var that = this;
     var swipeStartTime;
     var swipeFinishTime;

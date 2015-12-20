@@ -146,7 +146,7 @@ var YouTubeSlider = function() {
       beginSwipe(e.changedTouches[0]);
     }, false);
 
-    window..addEventListener("touchmove", function(e) {
+    window.addEventListener("touchmove", function(e) {
       e.preventDefault();
       swipeMove(e.changedTouches[0]);
     }, false);

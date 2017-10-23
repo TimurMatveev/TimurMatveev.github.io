@@ -1,0 +1,29 @@
+(function ($) {
+    $(document).ready(function () {
+        var docHandler = function (event) {
+           if (!$.contains(expandablePades[0], event.target)) {
+               expandablePades.removeClass("expanded");
+               $(document).off("click", docHandler);
+           }
+        }
+
+        var expandablePades = $("#expandablePades");
+        
+        $("#expandMenuButton").on("click", function (event) {
+            if (expandablePades.hasClass("expanded")) {
+                expandablePades.removeClass("expanded");
+                $(document).off("click", docHandler);
+            }
+            else {
+                expandablePades.addClass("expanded");
+                setTimeout(function () {
+                    $(document).on("click", docHandler);
+                }, 0);
+            }
+        });
+
+        if (window.location.pathname === "/") {
+            $(".maincontent").addClass("gt-main-page");
+        }
+    });
+})($ || jQuery);

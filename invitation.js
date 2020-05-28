@@ -15,8 +15,9 @@ const invitationEl = document.querySelector('.invitation');
     }
 
     function moveHandler(event) {
-        angleDeltaY = -evaluateAngleDelta(document.body.clientWidth, event.clientX);
-        angleDeltaX = evaluateAngleDelta(document.body.clientHeight, event.clientY);
+        const { clientX, clientY } = event.touches ? event.touches[0] : event;
+        angleDeltaY = -evaluateAngleDelta(document.body.clientWidth, clientX);
+        angleDeltaX = evaluateAngleDelta(document.body.clientHeight, clientY);
         updateTransformStyles();
     }
 

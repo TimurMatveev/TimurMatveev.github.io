@@ -1,0 +1,152 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.invitation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    margin: auto;
+    box-shadow: 0 0 36px 0 rgba(0, 0, 0, 0.5);
+}
+
+.invitation::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("bg.jpg");
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.newlyweds-path {
+    stroke-width: 0.2;
+    stroke: #333;
+    fill: none;
+}
+
+.newlyweds-title {
+    position: relative;
+    width: 60%;
+    margin: 0 auto 32px;
+    opacity: 0;
+    animation: opacityIntroPath 1000ms ease-in-out forwards 1200ms;
+}
+
+.newlyweds-path {
+    stroke-width: 0.2;
+    stroke: #333;
+    fill: none;
+}
+
+.heart-path {
+    stroke-width: 5;
+    stroke: #333;
+    fill: none;
+    stroke-dasharray: 740;
+    stroke-dashoffset: 740;
+    animation: heartsIntroPath 1500ms ease-in-out forwards;
+}
+
+.newlyweds-path.mod-beat {
+    fill: none;
+    stroke-dasharray: 6 294;
+    stroke-width: 0.3;
+    stroke-dashoffset: 6;
+    animation: newlywedsHeartBeatPath 6000ms linear infinite;
+}
+
+.newlyweds-path.mod-beat:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+.newlyweds-path.mod-beat:nth-child(2) {
+    animation-delay: 1500ms;
+}
+
+.newlyweds-path.mod-beat:nth-child(3) {
+    animation-delay: 3000ms;
+}
+
+.newlyweds-path.mod-beat:nth-child(4) {
+    animation-delay: 4500ms;
+}
+
+.newlyweds-hearts {
+    position: relative;
+    width: 35%;
+    margin: 32px auto;
+}
+
+.date {
+    text-align: center;
+    font-size: 5vmin;
+    font-weight: 200;
+    position: relative;
+    color: #333;
+    margin: 32px auto 128px;
+    opacity: 0;
+    animation: opacityIntroPath 1000ms ease-in-out forwards 1500ms;
+}
+
+@keyframes opacityIntroPath {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes heartsIntroPath {
+    from {
+        stroke-dashoffset: 740;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes newlywedsHeartBeatPath {
+    from {
+        stroke-dashoffset: 300;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@media (orientation: landscape) {
+    .invitation {
+        width: 50%;
+    }
+}
+
+.error {
+    display: none;
+    position: fixed;
+    background: #fff;
+    width: 100vw;
+    height: 100vh;
+}
+
+.error > span {
+    margin: auto;
+    font-size: 48px;
+}

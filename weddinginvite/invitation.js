@@ -5,6 +5,8 @@ var online = document.querySelector('.online');
 var interjections = document.querySelectorAll('.interjection');
 var error = document.querySelector('.error');
 
+var url = 'http://timurmatveev.github.io/weddinginvite';
+
 var guests = {
 	'BF5B7EDE': { greeting: 'Дорогие родители', interjection: 'вас' },
 	'C0AD3BA5': { greeting: 'Дорогая бабушка', interjection: 'тебя' },
@@ -36,51 +38,63 @@ var guests = {
 	'1ACE181A': { greeting: 'Дорогие дядя Миша, тетя Нина и Сережа, Лена, Настя и тетя Рая', interjection: 'вас' },
 	'3CB2848F': { greeting: 'Дорогие Виталий и Светлана', interjection: 'вас' },
 	'A673891A': { greeting: 'Дорогая бабушка Рая', interjection: 'тебя', isOnline: true },
-	'478C7BD0': { greeting: '' },
-	'846003A2': { greeting: '' },
-	'3043FEBF': { greeting: '' },
-	'81D75954': { greeting: '' },
-	'F74C79DA': { greeting: '' },
-	'72B69579': { greeting: '' },
-	'A109E687': { greeting: '' },
-	'75FDC34D': { greeting: '' },
-	'8CEE3FC6': { greeting: '' },
-	'7E251A99': { greeting: '' },
-	'6FBA4DAD': { greeting: '' },
-	'291C0335': { greeting: '' },
-	'C8CCF0BC': { greeting: '' },
-	'30426D06': { greeting: '' },
-	'E9876BA1': { greeting: '' },
-	'31FB4017': { greeting: '' },
-	'089A5C99': { greeting: '' },
-	'C6B76FCB': { greeting: '' },
-	'CC5E4FBA': { greeting: '' },
-	'486B0B36': { greeting: '' },
-	'2C6186F7': { greeting: '' },
-	'688FFA93': { greeting: '' },
-	'0D1E57F8': { greeting: '' },
-	'5A4F8976': { greeting: '' },
-	'0B537242': { greeting: '' },
-	'63D26658': { greeting: '' },
-	'9AFE1815': { greeting: '' },
-	'A9AA8474': { greeting: '' },
-	'51FF9CBA': { greeting: '' },
-	'E600E555': { greeting: '' },
+	// '478C7BD0': { greeting: '' },
+	// '846003A2': { greeting: '' },
+	// '3043FEBF': { greeting: '' },
+	// '81D75954': { greeting: '' },
+	// 'F74C79DA': { greeting: '' },
+	// '72B69579': { greeting: '' },
+	// 'A109E687': { greeting: '' },
+	// '75FDC34D': { greeting: '' },
+	// '8CEE3FC6': { greeting: '' },
+	// '7E251A99': { greeting: '' },
+	// '6FBA4DAD': { greeting: '' },
+	// '291C0335': { greeting: '' },
+	// 'C8CCF0BC': { greeting: '' },
+	// '30426D06': { greeting: '' },
+	// 'E9876BA1': { greeting: '' },
+	// '31FB4017': { greeting: '' },
+	// '089A5C99': { greeting: '' },
+	// 'C6B76FCB': { greeting: '' },
+	// 'CC5E4FBA': { greeting: '' },
+	// '486B0B36': { greeting: '' },
+	// '2C6186F7': { greeting: '' },
+	// '688FFA93': { greeting: '' },
+	// '0D1E57F8': { greeting: '' },
+	// '5A4F8976': { greeting: '' },
+	// '0B537242': { greeting: '' },
+	// '63D26658': { greeting: '' },
+	// '9AFE1815': { greeting: '' },
+	// 'A9AA8474': { greeting: '' },
+	// '51FF9CBA': { greeting: '' },
+	// 'E600E555': { greeting: '' },
 };
 
-// try {
-//     var currentGuestId = +location.search.match(/g=\w+/)[0].slice(-8).toUpperCase();
-//     var guest = guests[currentGuestId];
-//
-//     if (!guest) {
-//         throw new Error('No guest');
-//     }
-//
-// 	greeting.innerText = guest.greeting;
-//
-//     Array.prototype.forEach.call();
-//
-// } catch (e) {
-//     error.style.display = 'flex';
-//     invitation.parentElement.removeChild(invitation);
+try {
+    var currentGuestId = +location.search.match(/g=\w+/)[0].slice(-8).toUpperCase();
+    var guest = guests[currentGuestId];
+
+    if (!guest) {
+        throw new Error('No guest');
+    }
+
+	greeting.innerText = guest.greeting;
+
+    Array.prototype.forEach.call(interjections, function(interjection) {
+		interjection.innerText = guest.interjection;
+	});
+
+    if (guest.isOnline) {
+		offline.parentElement.removeChild(offline);
+		online.style.display = 'block';
+	}
+} catch (e) {
+    error.style.display = 'flex';
+    invitation.parentElement.removeChild(invitation);
+}
+
+// function getUrls() {
+// 	return Object.entries(guests).reduce((result, [id, { greeting }]) => {
+// 		return `${ result }${ greeting }: ${ url }?g=${ id }\n`;
+// 	}, '');
 // }

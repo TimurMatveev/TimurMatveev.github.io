@@ -71,7 +71,7 @@ var guests = {
 };
 
 try {
-    var currentGuestId = +location.search.match(/g=\w+/)[0].slice(-8).toUpperCase();
+    var currentGuestId = location.search.match(/g=\w+/)[0].slice(-8).toUpperCase();
     var guest = guests[currentGuestId];
 
     if (!guest) {
@@ -95,6 +95,6 @@ try {
 
 // function getUrls() {
 // 	return Object.entries(guests).reduce((result, [id, { greeting }]) => {
-// 		return `${ result }${ greeting }: ${ url }?g=${ id }\n`;
+// 		return `${ result }${ greeting }: ${ url }&g=${ id }\n`;
 // 	}, '');
 // }

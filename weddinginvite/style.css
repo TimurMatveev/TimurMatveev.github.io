@@ -11,7 +11,6 @@ body {
     background: rgb(235, 235, 235);
     background: linear-gradient(-150deg, rgb(240, 240, 240) 0%, rgb(225, 225, 225) 100%);
     color: #555;
-    pointer-events: none;
 }
 
 .invitation {
@@ -32,7 +31,7 @@ body {
 .newlyweds-title {
     position: relative;
     width: 75%;
-    margin-bottom: 15%;
+    margin-bottom: 10%;
 }
 
 .newlyweds-path {
@@ -70,32 +69,32 @@ body {
 
 .greeting {
     width: 80%;
-    font-size: 2rem;
+    font-size: 2.4rem;
     font-weight: 300;
     line-height: 1.8em;
     text-align: center;
-    margin-bottom: 7%;
+    margin-bottom: 6%;
     opacity: 0;
     animation: opacityIntroPath 500ms ease-in-out forwards 0ms;
 }
 
 .invitation-text {
     width: 90%;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 400;
     line-height: 1.8em;
-    margin-bottom: 5%;
+    margin-bottom: 4%;
     text-align: center;
     opacity: 0;
     animation: opacityIntroPath 500ms ease-in-out forwards 100ms;
 }
 
 .invitation-text-2 {
-    width: 80%;
-    font-size: 1.4rem;
+    width: 90%;
+    font-size: 1.6rem;
     font-weight: 400;
     line-height: 1.8em;
-    margin-bottom: 15%;
+    margin-bottom: 10%;
     text-align: center;
     opacity: 0;
     animation: opacityIntroPath 500ms ease-in-out forwards 200ms;
@@ -103,15 +102,15 @@ body {
 
 .date {
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 500;
-    margin-bottom: 7%;
+    margin-bottom: 6%;
     opacity: 0;
     animation: opacityIntroPath 500ms ease-in-out forwards 300ms;
 }
 
 .time {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 400;
     line-height: 1.8em;
     margin-bottom: 1%;
@@ -125,7 +124,7 @@ body {
 }
 
 .location {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 400;
     line-height: 1.8em;
     text-align: center;
@@ -143,7 +142,7 @@ body {
 
 .online {
     display: none;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 400;
     line-height: 1.8em;
     text-align: center;
@@ -219,4 +218,6 @@ body {
     html { font-size: 9px; }
 }
 
-
+.no-break {
+    white-space: nowrap;
+}

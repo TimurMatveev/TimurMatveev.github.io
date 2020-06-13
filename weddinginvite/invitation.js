@@ -1,5 +1,8 @@
 var invitation = document.querySelector('.invitation');
-var interjection = document.querySelector('.interjection');
+var greeting = document.querySelector('.greeting');
+var offline = document.querySelector('.offline');
+var online = document.querySelector('.online');
+var interjections = document.querySelectorAll('.interjection');
 var error = document.querySelector('.error');
 
 var guests = {
@@ -7,32 +10,32 @@ var guests = {
 	'C0AD3BA5': { greeting: 'Дорогая бабушка', interjection: 'тебя' },
 	'BAB1C83E': { greeting: 'Дорогая тетя Галя', interjection: 'тебя' },
 	'72E6F65B': { greeting: 'Арсений', interjection: 'тебя' },
-	'9223CF72': { greeting: 'Дорогие Илья и Аня' },
-	'5088755C': { greeting: 'Дорогие Женя и Таня' },
-	'98B956FF': { greeting: 'Дорогая Лера' },
-	'87042E04': { greeting: 'Дорогие Леша и Яня' },
-	'F8D5D59C': { greeting: 'Дорогие Александр и Алеся' },
-	'BEF8F7A4': { greeting: 'Дорогой дядя Леня' },
-	'0623C559': { greeting: 'Дорогие дядя Гриша и тетя Люся' },
-	'711FED72': { greeting: 'Дорогие дядя Гена и тетя Женя' },
-	'AF819B4E': { greeting: 'Дорогие дядя Саша и тетя Оля, Никита и Лера' },
-	'0ECC82F6': { greeting: '' },
-	'CB6B7C12': { greeting: '' },
-	'824CE9A2': { greeting: '' },
-	'B8CDF346': { greeting: '' },
-	'DA6027B6': { greeting: '' },
-	'F1F60111': { greeting: '' },
-	'7E0F2386': { greeting: '' },
-	'D6AFD762': { greeting: '' },
-	'211A0604': { greeting: '' },
-	'D4957BD7': { greeting: '' },
-	'E6A9FC9E': { greeting: '' },
-	'BCDA495D': { greeting: '' },
-	'9F04D328': { greeting: '' },
-	'65BB5859': { greeting: '' },
-	'1ACE181A': { greeting: '' },
-	'3CB2848F': { greeting: '' },
-	'A673891A': { greeting: '' },
+	'9223CF72': { greeting: 'Дорогие Илья и Аня', interjection: 'вас' },
+	'5088755C': { greeting: 'Дорогие Женя и Таня', interjection: 'вас' },
+	'98B956FF': { greeting: 'Дорогая Лера', interjection: 'тебя' },
+	'87042E04': { greeting: 'Дорогие Леша и Яня', interjection: 'вас' },
+	'F8D5D59C': { greeting: 'Дорогие Александр и Алеся', interjection: 'вас' },
+	'BEF8F7A4': { greeting: 'Дорогой дядя Леня', interjection: 'Вас' },
+	'0623C559': { greeting: 'Дорогие дядя Гриша и тетя Люся', interjection: 'вас' },
+	'711FED72': { greeting: 'Дорогие дядя Гена и тетя Женя', interjection: 'вас' },
+	'AF819B4E': { greeting: 'Дорогие дядя Саша и тетя Оля, Никита и Лера', interjection: 'вас' },
+	'0ECC82F6': { greeting: 'Дорогие мама и Саша', interjection: 'вас' },
+	'CB6B7C12': { greeting: 'Дорогие бабушка и Борис', interjection: 'вас' },
+	'824CE9A2': { greeting: 'Дорогие дядя Юра и тетя Света', interjection: 'вас' },
+	'B8CDF346': { greeting: 'Дорогие Виталик и Викa', interjection: 'вас' },
+	'DA6027B6': { greeting: 'Дорогие Дима и Наташа', interjection: 'вас' },
+	'F1F60111': { greeting: 'Дорогие папа и Кристина', interjection: 'вас' },
+	'7E0F2386': { greeting: 'Дорогая бабушка', interjection: 'тебя' },
+	'D6AFD762': { greeting: 'Дорогие Леша и Ира', interjection: 'вас' },
+	'211A0604': { greeting: 'Дорогой Никита', interjection: 'тебя' },
+	'D4957BD7': { greeting: 'Дорогие Саша и Оля', interjection: 'вас' },
+	'E6A9FC9E': { greeting: 'Дорогой Паша', interjection: 'тебя' },
+	'BCDA495D': { greeting: 'Дорогой Влад', interjection: 'тебя' },
+	'9F04D328': { greeting: 'Дорогая Катя', interjection: 'тебя' },
+	'65BB5859': { greeting: 'Дорогой Илья', interjection: 'тебя' },
+	'1ACE181A': { greeting: 'Дорогие дядя Миша, тетя Нина и Сережа, Лена, Настя и тетя Рая', interjection: 'вас' },
+	'3CB2848F': { greeting: 'Дорогие Виталий и Светлана', interjection: 'вас' },
+	'A673891A': { greeting: 'Дорогая бабушка Рая', interjection: 'тебя', isOnline: true },
 	'478C7BD0': { greeting: '' },
 	'846003A2': { greeting: '' },
 	'3043FEBF': { greeting: '' },
@@ -64,7 +67,7 @@ var guests = {
 	'51FF9CBA': { greeting: '' },
 	'E600E555': { greeting: '' },
 };
-//
+
 // try {
 //     var currentGuestId = +location.search.match(/g=\w+/)[0].slice(-8).toUpperCase();
 //     var guest = guests[currentGuestId];
@@ -72,6 +75,10 @@ var guests = {
 //     if (!guest) {
 //         throw new Error('No guest');
 //     }
+//
+// 	greeting.innerText = guest.greeting;
+//
+//     Array.prototype.forEach.call();
 //
 // } catch (e) {
 //     error.style.display = 'flex';

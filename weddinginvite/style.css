@@ -71,7 +71,7 @@ body {
 .greeting {
     width: 80%;
     font-size: 2rem;
-    font-weight: 200;
+    font-weight: 300;
     line-height: 1.8em;
     text-align: center;
     margin-bottom: 7%;
@@ -82,7 +82,7 @@ body {
 .invitation-text {
     width: 90%;
     font-size: 1.4rem;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.8em;
     margin-bottom: 5%;
     text-align: center;
@@ -93,7 +93,7 @@ body {
 .invitation-text-2 {
     width: 80%;
     font-size: 1.4rem;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.8em;
     margin-bottom: 15%;
     text-align: center;
@@ -104,7 +104,7 @@ body {
 .date {
     text-align: center;
     font-size: 1.4rem;
-    font-weight: 400;
+    font-weight: 500;
     margin-bottom: 7%;
     opacity: 0;
     animation: opacityIntroPath 500ms ease-in-out forwards 300ms;
@@ -112,7 +112,7 @@ body {
 
 .time {
     font-size: 1.4rem;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.8em;
     margin-bottom: 1%;
     text-align: center;
@@ -121,12 +121,12 @@ body {
 }
 
 .time > span {
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .location {
     font-size: 1.4rem;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.8em;
     text-align: center;
     opacity: 0;
@@ -135,7 +135,7 @@ body {
 
 .location-address {
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 500;
     color: #999;
     opacity: 0;
     animation: opacityIntroPath 500ms ease-in-out forwards 600ms;
@@ -144,7 +144,7 @@ body {
 .online {
     display: none;
     font-size: 1.4rem;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.8em;
     text-align: center;
     opacity: 0;
@@ -152,7 +152,7 @@ body {
 }
 
 .skype {
-    font-weight: 400;
+    font-weight: 500;
 }
 
 @keyframes opacityIntroPath {

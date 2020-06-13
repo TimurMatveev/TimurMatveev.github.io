@@ -20,7 +20,7 @@ var guests = {
 	'BEF8F7A4': { greeting: 'Дорогой дядя Леня!', interjection: 'Вас' },
 	'0623C559': { greeting: 'Дорогие дядя Гриша и тетя Люся!', interjection: 'вас' },
 	'711FED72': { greeting: 'Дорогие дядя Гена и тетя Женя!', interjection: 'вас' },
-	'AF819B4E': { greeting: 'Дорогие дядя Саша и тетя Оля, Никита и Лера!', interjection: 'вас' },
+	'AF819B4E': { greeting: 'Дорогие дядя Саша и тетя Оля! Никита и Лера!', interjection: 'вас' },
 	'0ECC82F6': { greeting: 'Дорогие мама и Саша!', interjection: 'вас' },
 	'CB6B7C12': { greeting: 'Дорогие бабушка и Борис!', interjection: 'вас' },
 	'824CE9A2': { greeting: 'Дорогие дядя Юра и тетя Света!', interjection: 'вас' },

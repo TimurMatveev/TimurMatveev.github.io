@@ -5,13 +5,10 @@ var online = document.querySelector('.online');
 var interjections = document.querySelectorAll('.interjection');
 var error = document.querySelector('.error');
 
-var url = 'http://timurmatveev.github.io/weddinginvite';
-
 var guests = {
 	'BF5B7EDE': { greeting: 'Дорогие родители!', interjection: 'вас' },
 	'C0AD3BA5': { greeting: 'Дорогая бабушка!', interjection: 'тебя' },
-	'BAB1C83E': { greeting: 'Дорогая тетя Галя!', interjection: 'тебя' },
-	'72E6F65B': { greeting: 'Арсений!', interjection: 'тебя' },
+	'BAB1C83E': { greeting: 'Дорогие тетя Галя и Арсений!', interjection: 'вас' },
 	'9223CF72': { greeting: 'Дорогие Илья и Аня!', interjection: 'вас' },
 	'5088755C': { greeting: 'Дорогие Женя и Таня!', interjection: 'вас' },
 	'98B956FF': { greeting: 'Дорогая Лера!', interjection: 'тебя' },
@@ -94,6 +91,7 @@ try {
 }
 
 // function getUrls() {
+// 	var url = 'http://timurmatveev.github.io/weddinginvite';
 // 	return Object.entries(guests).reduce((result, [id, { greeting }]) => {
 // 		return `${ result }${ greeting }: ${ url }&g=${ id }\n`;
 // 	}, '');

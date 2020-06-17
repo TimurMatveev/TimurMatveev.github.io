@@ -36,7 +36,7 @@ var guests = {
 	'478C7BD0': { greeting: 'Дорогие Лена,\nНастя и тетя Рая!', interjection: 'вас' },
 	'3CB2848F': { greeting: 'Дорогие Виталий и Светлана!', interjection: 'вас' },
 	'A673891A': { greeting: 'Дорогая бабушка Рая!', interjection: 'тебя', isOnline: true },
-	// '846003A2': { greeting: '' },
+	'846003A2': { greeting: 'Дорогие Паша и Маргарита!', interjection: 'вас', isOnline: true },
 	// '3043FEBF': { greeting: '' },
 	// '81D75954': { greeting: '' },
 	// 'F74C79DA': { greeting: '' },
